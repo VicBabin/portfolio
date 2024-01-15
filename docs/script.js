@@ -1,42 +1,29 @@
 document.addEventListener('DOMContentLoaded', function () {
-    var overlay = document.getElementById('overlay');
-    var largeImage = new Image();
-  
-    // Fonction pour afficher l'image en grand
-    function showLargeImage(src) {
-      console.log("Affichage de l'image en grand");
-      largeImage.src = src;
-      overlay.appendChild(largeImage);
-      overlay.style.display = 'flex';
-    }
-  
-    // Cacher l'image en grand
-    function hideLargeImage() {
-      console.log("Cacher l'image en grand");
-      overlay.style.display = 'none';
-      overlay.removeChild(largeImage);
-    }
-  
-    // Événement de clic sur l'overlay pour cacher l'image en grand
-    overlay.addEventListener('click', function (event) {
-      if (event.target === overlay) {
-        console.log("Clic sur l'overlay");
-        hideLargeImage();
-      }
-    });
-  
-    // Événement de clic sur l'image en grand pour la fermer
-    largeImage.addEventListener('click', function () {
-      console.log("Clic sur l'image en grand");
-      hideLargeImage();
-    });
-  
-    // Événement de clic sur le document pour capturer l'élément cliqué
-    document.addEventListener('click', function (event) {
-      if (event.target.tagName === 'IMG') {
-        console.log("Clic sur une image");
-        showLargeImage(event.target.src);
-      }
-    });
+  const images = document.querySelectorAll('.mosaique');
+  const overlay = document.getElementById('overlay');
+
+  images.forEach(function (image) {
+      image.addEventListener('click', function () {
+          // Afficher l'image en grand
+          overlay.style.display = 'block';
+          const imageSrc = this.src;
+          const largeImage = document.createElement('img');
+          largeImage.src = imageSrc;
+          largeImage.classList.add('large-image');
+          overlay.appendChild(largeImage);
+
+          // Définir la taille maximale de l'image en grand
+          const maxWidth = window.innerWidth * 0.8; // 80% de la largeur de la fenêtre
+          const maxHeight = window.innerHeight * 0.8; // 80% de la hauteur de la fenêtre
+
+          largeImage.style.maxWidth = maxWidth + 'px';
+          largeImage.style.maxHeight = maxHeight + 'px';
+
+          // Fermer l'image en grand en cliquant dessus
+          largeImage.addEventListener('click', function () {
+              overlay.style.display = 'none';
+              overlay.removeChild(largeImage);
+          });
+      });
+  });
 });
-  
