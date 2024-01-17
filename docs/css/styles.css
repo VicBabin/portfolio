@@ -626,14 +626,20 @@ progress {
   .column {
     flex: 100%;
     max-width: 100%;
+    
   }
+}
+
+.mosaique{
+  border: transparent solid 2px;
+
 }
 
 .mosaique:hover {
   box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em, rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
   transform: translateY(-3px) scale(1.1);
   transition: 0.3s;
-  border: white solid 5px;
+  border: white solid 2px;
 }
 
 
@@ -1185,7 +1191,7 @@ progress {
 
   .col-md-6 {
     flex: 0 0 auto;
-    width: 50%;
+    width: 100%;
   }
 
   .col-md-7 {
@@ -3037,12 +3043,12 @@ textarea.form-control-lg {
 
 .btn-primary {
   color: #fff;
-  background-color: #dbb133;
-  border-color: #b18d22;
+  background-color: #594e30;
+  border-color: #000000;
 }
 .btn-primary:hover {
-  color: #fff;
-  background-color: #b18d22;
+  color: #000000;
+  background-color: #756754;
   border-color: #000000;
 }
 .btn-check:focus + .btn-primary, .btn-primary:focus {
@@ -6979,6 +6985,8 @@ textarea.form-control-lg {
 }
 
 .d-flex {
+  margin-top: 20%;
+  margin-left: 30%;
   display: flex !important;
 }
 
