@@ -36,6 +36,8 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+
+
 hr {
   margin: 1rem 0;
   color: inherit;
@@ -4968,6 +4970,14 @@ textarea.form-control-lg {
   letter-spacing: 0.8rem;
   text-align: center;
   padding-bottom: 20px;
+}
+
+.text-centered{
+  text-align: center;
+  color: #000;
+  font-family: 'Montserrat', sans-serif;
+  font-size: larger;
+  padding-bottom: 0%;
 }
 
 .centered{
