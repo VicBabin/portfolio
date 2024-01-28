@@ -19,11 +19,25 @@ document.addEventListener('DOMContentLoaded', function () {
           largeImage.style.maxWidth = maxWidth + 'px';
           largeImage.style.maxHeight = maxHeight + 'px';
 
+          // Fermer l'image en grand en cliquant sur l'image elle-même
+            function hideLargeImage() {
+                overlay.style.display = 'none';
+                const largeImage = document.querySelector('.large-image');
+                overlay.removeChild(largeImage);
+            };
+          
           // Fermer l'image en grand en cliquant dessus
           largeImage.addEventListener('click', function () {
               overlay.style.display = 'none';
               overlay.removeChild(largeImage);
           });
+        
+          // Fermer l'image en cliquants sur l'overlay
+          overlay.addEventListener('click', function (event) {
+              overlay.style.display = 'none';
+              hideLargeImage();
+          });
       });
   });
 });
+
