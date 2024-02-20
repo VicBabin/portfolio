@@ -632,6 +632,11 @@ progress {
   }
 }
 
+.message_photo{
+  text-align: center;
+  font-weight: bold;
+}
+
 .mosaique{
   border: transparent solid 2px;
 
